@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>七夕情人节</title>
+	</head>
+	<body>
+		
+	</body>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize",function(){
+			if(window.orientation === 180 || window.orientation === 0){
+				alert("竖屏");
+			}else if(window.orientation === 90 || window.orientation === -90){
+				alert("横屏");
+			}
+		},false);
+	</script>
+</html>
