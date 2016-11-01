@@ -1,0 +1,80 @@
+.a-background,
+.a-background-top,
+.a-background-middle,
+.a-background-bottom{
+	width: 100%;
+}
+.charector{
+	position: absolute;
+	left: 6%;
+	/*top: 55%;*/
+	bottom: 0;
+	width: 151px;
+	height: 291px;
+	background: url(http://img.mukewang.com/55ade248000198ae10550582.png) no-repeat -0px -291px transparent;
+	
+}
+.a-background{
+	position: absolute;
+	height: 100%;
+}
+.a-background-top{
+	height: 71.6%;
+	background-image: url(../images/background/a_background_top.png);
+	background-size: 100% 100%;
+}
+.a-background-middle{
+	height: 13.1%;
+	background-image: url(../images/background/a_background_middle.png);
+	background-size: 100% 100%;
+}
+.a-background-bottom{
+	height: 15.3%;
+	background-image: url(../images/background/a_background_botton.png);
+	background-size: 100% 100%;
+}
+.slowWalk{
+	animation-name: personSlow;  //动画名称
+	-webkit-animation-name: personSlow;
+	animation-duration: 950ms;   //定义一个动画完成的周期
+	-webkit-animation-duration: 950ms;
+	animation-iteration-count: infinite;   //循环播放
+	-webkit-animation-iteration-count: infinite;
+	animation-timing-function: steps(1,start);   //动画切换方式为一帧一帧的改变
+	-webkit-animation-timing-function: steps(1,start);
+}
+/*普通慢走*/
+@keyframes personSlow{
+	0%{
+		background-position: -0px -291px;
+	}
+	25%{
+		background-position: -602px -0px;
+	}
+	50%{
+		background-position: -302px -291px;
+	}
+	75%{
+		background-position: -151px -291px;
+	}
+	100%{
+		background-position: -0px -291px;
+	}
+}
+@-webkit-keyframes personSlow{
+	0%{
+		background-position: -0px -291px;
+	}
+	25%{
+		background-position: -602px -0px;
+	}
+	50%{
+		background-position: -302px -291px;
+	}
+	75%{
+		background-position: -151px -291px;
+	}
+	100%{
+		background-position: -0px -291px;
+	}
+}

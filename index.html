@@ -4,17 +4,38 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 		<title>七夕情人节</title>
+		<link rel="stylesheet" href="css/common.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/boy.css" />
 	</head>
 	<body>
-		
+		<div id="content">
+			<ul class="content-wrap">
+				<li>
+					<div class="a-background">
+						<div class="a-background-top"></div>
+						<div class="a-background-middle"></div>
+						<div class="a-background-bottom"></div>
+					</div>
+				</li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div id="boy" class="charector"></div>
+			<div class="button">
+				<button>点击开始动画</button>
+			</div>
+		</div>
 	</body>
 	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/script.js" ></script>
 	<script>
 		window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize",function(){
 			if(window.orientation === 180 || window.orientation === 0){
-				alert("竖屏");
+//				alert("竖屏");
+				window.orientation += 90;
 			}else if(window.orientation === 90 || window.orientation === -90){
-				alert("横屏");
+//				alert("横屏");
 			}
 		},false);
 	</script>
