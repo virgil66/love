@@ -7,36 +7,130 @@
 		<link rel="stylesheet" href="css/common.css"/>
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel="stylesheet" href="css/boy.css" />
+		<link rel="stylesheet" href="css/shop.css" />
 	</head>
 	<body>
 		<div id="content">
 			<ul class="content-wrap">
+				<!--第一个画面-->
 				<li>
+					<!--背景-->
 					<div class="a-background">
 						<div class="a-background-top"></div>
 						<div class="a-background-middle"></div>
 						<div class="a-background-bottom"></div>
 					</div>
+					<!--太阳模块-->
+					<div id="sun"></div>
+					<!--云模块-->
+					<div class="cloudArea">
+						<div class="cloud cloud1"></div>
+						<div class="cloud cloud2"></div>
+					</div>
 				</li>
-				<li></li>
-				<li></li>
+				<!--第二个画面-->
+				<li>
+					<!--背景图-->
+					<div class="b-background"></div>
+					<div class="b-background-preload"></div>
+					<!--商店-->
+					<div class="shop">
+						<!--门-->
+						<div class="door">
+							<div class="door-left"></div>
+							<div class="door-right"></div>
+						</div>
+						<!--灯-->
+						<div class="lamp"></div>
+					</div>
+					<!--鸟-->
+					<div class="bird"></div>
+				</li>
+				<!--第三个画面-->
+				<li>
+					<!--背景图-->
+					<div class="c-background">
+						<div class="c-background-top"></div>
+						<div class="c-background-middle"></div>
+						<div class="c-background-bottom"></div>
+					</div>
+					<!--小女孩-->
+					<div class="girl"></div>
+					<!--水波-->
+					<div class="bridge-bottom">
+						<div class="water">
+							<div id="water1" class="water-1"></div>
+							<div id="water2" class="water-2"></div>
+							<div id="water3" class="water-3"></div>
+							<div id="water4" class="water-4"></div>
+						</div>
+					</div>
+					<!--星星-->
+					<ul class="stars">
+						<li class="stars1"></li>
+						<li class="stars2"></li>
+						<li class="stars3"></li>
+						<li class="stars4"></li>
+						<li class="stars5"></li>
+						<li class="stars6"></li>
+					</ul>
+				</li>
 			</ul>
+			<!--飘花-->
+			<div id="snowflake"></div>
 			<div id="boy" class="charector"></div>
-			<div class="button">
-				<button>点击开始动画</button>
-			</div>
 		</div>
 	</body>
 	<script src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="js/jquery.transit.js" ></script>
+	<!--<script type="text/javascript" src="js/snowflake.js" ></script>
+	<script type="text/javascript" src="js/swipe.js" ></script>
+	<script type="text/javascript" src="js/love.js" ></script>-->
 	<script src="js/script.js" ></script>
 	<script>
 		window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize",function(){
 			if(window.orientation === 180 || window.orientation === 0){
 //				alert("竖屏");
-				window.orientation += 90;
+//				window.orientation += 90;
+				window.css({
+					transform: "rotate(90deg)"
+				})
 			}else if(window.orientation === 90 || window.orientation === -90){
 //				alert("横屏");
 			}
 		},false);
+		
+		$(function(){
+			var swipe = Swipe($('#content'));
+			var $boy = $('#boy');
+			
+			//设置缩放比例与基点位置
+			var proportion = $(document).width() / 1440;
+			
+			//设置元素的缩放
+			$boy.css({
+				transform: 'sacle(' + proportion + ')'
+			});
+			
+			//自定义方法确定小男孩的位置
+			var boyBottom= function(){
+				var $bottomHeight = $('.a-background-bottom').height();
+				var $middleHeight = $('.a-background-middle').height() / 2;
+				return $bottomHeight;
+			}
+			
+			//获取人物元素的布局尺寸
+			var boyWidth = $boy.width();
+			var boyHeight = $boy.height();
+			
+			//计算缩放后的元素与实际尺寸的一个距离
+			var boyInsideLeft = (boyWidth - (boyWidth * proportion)) / 2;
+			var boyInsideTop = (boyHeight - (boyHeight * proportion)) / 2;
+			
+			//修正小男孩的位置
+			$boy.css({
+				top: boyBottom - (boyHeight * proportion) - boyInsideTop
+			})
+		})
 	</script>
 </html>

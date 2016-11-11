@@ -7,6 +7,32 @@ html,body{
 	font-family: "微软雅黑";
 	font-size: 14px;
 	line-height: 1.4268;
+	-webkit-text-size-adjust: none;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	perspective: 1000;
+	-webkit-perspective: 1000;
+}
+h1{
+	font-size: 33px;
+	margin: 50px 0 15px;
+	text-align: center;
+	color: #212121;
+}
+h2{
+	font-size: 14px;
+	font-weight: bold;
+	color: #3c3c3c;
+	margin: 20px 10px 10px;
+}
+small{
+	margin: 0 10px 30px;
+	display: block;
+	font-size: 12px;
 }
 a,
 a:hover,
@@ -16,5 +42,16 @@ a:focus{
 }
 a{
 	display: block;
+	margin: 0 0 0 10px;
+	font-size: 12px;
+	color: #3c3c3c;
+}
+img{
+	border: 0;
+}
+ol,
+ul,
+li{
+	list-style-type: none;
 }
 

@@ -1,0 +1,50 @@
+.layerB{
+	position: relative;
+}
+.b-background{
+	width: 100%;
+}
+.b-background{
+	position: absolute;
+	height: 100%;
+	background: url(../images/QixiB-dark.png);
+	background-size: 100% 100%;
+}
+.b-background-preload{
+	background: url(../images/QixiB-bright.png) no-repeat -9999px -9999px;
+}
+.lamp-bright{
+	background: url(../images/QixiB-bright.png);
+	background-size: 100% 100%;
+}
+.shop{
+	position: absolute;
+	top: 36.5%;
+	left: 29%;
+	width: 39.5%;
+	height: 35.5%;
+}
+.door{
+	position: absolute;
+	top: 32%;
+	left: 58.5%;
+	width: 32%;
+	height: 67%;
+	overflow: hidden;
+}
+.door-left,
+.door-right{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+}
+.door-left{
+	left: 0%;
+	background: url(../images/door-left.png);
+	background-size: 100% 100%;
+}
+.door-right{
+	left: 50%;
+	background: url(../images/door-right.png);
+	background-size: 100% 100%;
+}
